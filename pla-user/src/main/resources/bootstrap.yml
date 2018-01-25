@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: pla-user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: pla-config-server
