@@ -1,6 +1,6 @@
 package com.ocristian.plauser.producer;
 
-import com.ocristian.plauser.model.User;
+import com.ocristian.plauser.entity.User;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;

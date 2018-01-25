@@ -1,9 +1,10 @@
-package com.ocristian.plauser.model;
+package com.ocristian.plauser.entity;
 
 import lombok.Data;
-import lombok.NonNull;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by Cristian Silva on 25/01/18.
@@ -17,10 +18,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NonNull
-    private String login;
+    @Email
+    @NotNull
+    private String email;
 
-    @NonNull
+    @NotNull
     private String password;
 
 }

@@ -1,6 +1,6 @@
 package com.ocristian.plauser.repository;
 
-import com.ocristian.plauser.model.User;
+import com.ocristian.plauser.entity.User;
 import org.springframework.data.repository.CrudRepository;
 
 /**

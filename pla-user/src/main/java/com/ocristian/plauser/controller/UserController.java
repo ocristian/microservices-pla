@@ -1,6 +1,6 @@
 package com.ocristian.plauser.controller;
 
-import com.ocristian.plauser.model.User;
+import com.ocristian.plauser.entity.User;
 import com.ocristian.plauser.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
