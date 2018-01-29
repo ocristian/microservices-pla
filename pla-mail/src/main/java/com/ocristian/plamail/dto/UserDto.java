@@ -10,7 +10,7 @@ public class UserDto {
 
     private Long id;
 
-    private String mail;
+    private String email;
 
     private String password;
 

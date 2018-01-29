@@ -4,29 +4,29 @@ import com.ocristian.plamail.dto.UserDto;
 import com.ocristian.plamail.entity.Mail;
 import com.ocristian.plamail.repository.MailRepository;
 import com.ocristian.plamail.service.MailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by Cristian Silva on 25/01/18.
  */
+@Component
+@Slf4j
 public class MailServiceImpl implements MailService {
 
+    @Autowired
     public JavaMailSender emailSender;
 
-    public MailRepository mailRepository;
-
     @Autowired
-    MailServiceImpl(JavaMailSender emailSender, MailRepository mailRepository) {
-        this.emailSender = emailSender;
-        this.mailRepository = mailRepository;
-    }
+    public MailRepository mailRepository;
 
     @Override
     public void send(UserDto userDto) {
 
-        Mail newEmail = Mail.builder().to(userDto.getMail()).subject("Email subject").text("Email text.").build();
+        Mail newEmail = Mail.builder().to(userDto.getEmail()).subject("Email subject").text("Email text.").build();
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(newEmail.getTo());
@@ -35,7 +35,8 @@ public class MailServiceImpl implements MailService {
 
         mailRepository.save(newEmail);
 
-        emailSender.send(mailMessage);
+        log.info("sending message='{}'", mailMessage);
+        //emailSender.send(mailMessage);
 
     }
 }
