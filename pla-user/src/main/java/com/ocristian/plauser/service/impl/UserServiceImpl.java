@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     private KafkaProducerSender sender;
 
     @Autowired
-    UserServiceImpl(UserRepository userRepository) {
+    UserServiceImpl(UserRepository userRepository, KafkaProducerSender sender) {
         this.userRepository = userRepository;
         this.sender = sender;
     }
