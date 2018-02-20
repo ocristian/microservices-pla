@@ -3,6 +3,8 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:ocristian/microservices-pla.git
+          uri: https://github.com/ocristian/microservices-pla.git
+          username: ${GIT_USER}
+          password: ${GIT_PASS}
           search-paths:
             - "pla-config-properties/{application}/{profile}"
